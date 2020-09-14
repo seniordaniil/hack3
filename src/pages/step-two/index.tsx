@@ -91,9 +91,12 @@ const StepTwoPage: FC<{ id: string }> = ({ id }) => {
             type={'date'}
             value={date_close}
             onChange={(e) => {
-              change((draft) => {
-                draft.date_close = e.currentTarget.value;
-              });
+              const value = e?.currentTarget?.value;
+              if (value) {
+                change((draft) => {
+                  draft.date_close = value;
+                });
+              }
             }}
           />
         </FormLayout>

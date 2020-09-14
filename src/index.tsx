@@ -7,6 +7,10 @@ import ReactDOM from 'react-dom';
 import { App } from './app';
 import * as serviceWorker from './serviceWorker';
 
+if (process.env.REACT_APP_ERUDA) {
+  import('./eruda').catch(console.error);
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
